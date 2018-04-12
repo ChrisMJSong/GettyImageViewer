@@ -14,6 +14,7 @@
 		83DE0911207FA3940061EB37 /* GettyImageViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE0910207FA3940061EB37 /* GettyImageViewerTests.swift */; };
 		83DE091C207FA3940061EB37 /* GettyImageViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE091B207FA3940061EB37 /* GettyImageViewerUITests.swift */; };
 		83DE092C207FA40D0061EB37 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE092B207FA40D0061EB37 /* HomeViewController.swift */; };
+		D243E269F7E5BF8D00A72A1B /* Pods_GettyImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7AE34CFC51ECF619AA5D1E /* Pods_GettyImageViewer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A7AE34CFC51ECF619AA5D1E /* Pods_GettyImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GettyImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		350DC8DBAFBC7C8328F9E657 /* Pods-GettyImageViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettyImageViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-GettyImageViewer/Pods-GettyImageViewer.release.xcconfig"; sourceTree = "<group>"; };
 		83DE08F8207FA3940061EB37 /* GettyImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettyImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DE08FB207FA3940061EB37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83DE0900207FA3940061EB37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		83DE091B207FA3940061EB37 /* GettyImageViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettyImageViewerUITests.swift; sourceTree = "<group>"; };
 		83DE091D207FA3940061EB37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83DE092B207FA40D0061EB37 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AE6D955E7E1B8A9153AFC423 /* Pods-GettyImageViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettyImageViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GettyImageViewer/Pods-GettyImageViewer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D243E269F7E5BF8D00A72A1B /* Pods_GettyImageViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		719570AEA20F034CD083B587 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE6D955E7E1B8A9153AFC423 /* Pods-GettyImageViewer.debug.xcconfig */,
+				350DC8DBAFBC7C8328F9E657 /* Pods-GettyImageViewer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		83DE08EF207FA3940061EB37 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +95,8 @@
 				83DE090F207FA3940061EB37 /* GettyImageViewerTests */,
 				83DE091A207FA3940061EB37 /* GettyImageViewerUITests */,
 				83DE08F9207FA3940061EB37 /* Products */,
+				719570AEA20F034CD083B587 /* Pods */,
+				BE0AAA4138C9B335B2A96D77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +157,14 @@
 			path = HomeView;
 			sourceTree = "<group>";
 		};
+		BE0AAA4138C9B335B2A96D77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A7AE34CFC51ECF619AA5D1E /* Pods_GettyImageViewer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83DE0920207FA3940061EB37 /* Build configuration list for PBXNativeTarget "GettyImageViewer" */;
 			buildPhases = (
+				9730A96A7B113F9DD2299340 /* [CP] Check Pods Manifest.lock */,
 				83DE08F4207FA3940061EB37 /* Sources */,
 				83DE08F5207FA3940061EB37 /* Frameworks */,
 				83DE08F6207FA3940061EB37 /* Resources */,
+				9B14F4DF827739D8BD7CA4CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,6 +295,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9730A96A7B113F9DD2299340 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GettyImageViewer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B14F4DF827739D8BD7CA4CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GettyImageViewer/Pods-GettyImageViewer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HTMLReader/HTMLReader.framework",
+				"${BUILT_PRODUCTS_DIR}/HTMLString/HTMLString.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTMLReader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTMLString.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GettyImageViewer/Pods-GettyImageViewer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83DE08F4207FA3940061EB37 /* Sources */ = {
@@ -440,6 +513,7 @@
 		};
 		83DE0921207FA3940061EB37 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE6D955E7E1B8A9153AFC423 /* Pods-GettyImageViewer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +528,7 @@
 		};
 		83DE0922207FA3940061EB37 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 350DC8DBAFBC7C8328F9E657 /* Pods-GettyImageViewer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

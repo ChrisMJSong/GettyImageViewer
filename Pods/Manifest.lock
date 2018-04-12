@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (4.7.1)
+  - HTMLReader (2.1.1)
+  - HTMLString (4.0.1)
+  - RxSwift (4.1.2)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - HTMLReader (~> 2.1)
+  - HTMLString (~> 4.0)
+  - RxSwift (~> 4.1)
+  - SVProgressHUD (~> 2.2)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - HTMLReader
+    - HTMLString
+    - RxSwift
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  HTMLReader: 311dd8a7f6a15dd815977f8e963dff4588a1ba05
+  HTMLString: 8d9a8a8aaf63dd52c5b8cd9a38e14da52f753210
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: 079ce37d479e4a9c0b0997472b713d78c5ee0e67
+
+COCOAPODS: 1.5.0
