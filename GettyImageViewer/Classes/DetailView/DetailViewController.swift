@@ -30,3 +30,10 @@ class DetailViewController: UIViewController {
     }
 
 }
+
+// MARK: UIScrollViewDelegate
+extension DetailViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.imageView
+    }
+}
