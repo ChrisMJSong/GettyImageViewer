@@ -51,7 +51,9 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! HomeImageCell
         
+        let item = homeViewModel.items[indexPath.row]
         cell.backgroundColor = UIColor.lightGray
+        cell.updateItem(item: item)
         
         return cell
     }
