@@ -32,9 +32,8 @@ class HomeViewController: UIViewController {
 // MARK: UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) else {
-            return
-        }
+        let item = homeViewModel.item(at: indexPath.row)
+        performSegue(withIdentifier: "SegueDetail", sender: item)
     }
 }
 
@@ -51,7 +50,7 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! HomeImageCell
         
-        let item = homeViewModel.items[indexPath.row]
+        let item = homeViewModel.item(at: indexPath.row)
         cell.backgroundColor = UIColor.lightGray
         cell.updateItem(item: item)
         
