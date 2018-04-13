@@ -1,4 +1,5 @@
-# Created by https://www.gitignore.io/api/xcode,swift,fastlane,cocoapods
+
+# Created by https://www.gitignore.io/api/xcode,swift,fastlane,firebase,cocoapods
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
@@ -28,6 +29,10 @@ fastlane/screenshots/screenshots.html
 
 # scan temporary files
 fastlane/test_output
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
 ### Swift ###
 # Xcode
 #
@@ -102,4 +107,4 @@ fastlane/screenshots
 /*.gcno
 
 
-# End of https://www.gitignore.io/api/xcode,swift,fastlane,cocoapods
+# End of https://www.gitignore.io/api/xcode,swift,fastlane,firebase,cocoapods
