@@ -15,7 +15,10 @@
 		83DE091C207FA3940061EB37 /* GettyImageViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE091B207FA3940061EB37 /* GettyImageViewerUITests.swift */; };
 		83DE092C207FA40D0061EB37 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE092B207FA40D0061EB37 /* HomeViewController.swift */; };
 		83E67F3D208052690066321C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E67F3C208052690066321C /* HomeViewModel.swift */; };
+		83E67F3F208052B70066321C /* HomeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E67F3E208052B70066321C /* HomeImageCell.swift */; };
 		83E67F43208053C80066321C /* ImageSample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83E67F42208053C70066321C /* ImageSample.jpg */; };
+		83F1B5F3208081F400A8106C /* HomeImageCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1B5F2208081F400A8106C /* HomeImageCellItem.swift */; };
+		83F1B5F52080826D00A8106C /* HomeImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1B5F42080826D00A8106C /* HomeImageObject.swift */; };
 		D243E269F7E5BF8D00A72A1B /* Pods_GettyImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7AE34CFC51ECF619AA5D1E /* Pods_GettyImageViewer.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +56,10 @@
 		83DE091D207FA3940061EB37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83DE092B207FA40D0061EB37 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		83E67F3C208052690066321C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		83E67F3E208052B70066321C /* HomeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImageCell.swift; sourceTree = "<group>"; };
 		83E67F42208053C70066321C /* ImageSample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ImageSample.jpg; sourceTree = "<group>"; };
+		83F1B5F2208081F400A8106C /* HomeImageCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImageCellItem.swift; sourceTree = "<group>"; };
+		83F1B5F42080826D00A8106C /* HomeImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImageObject.swift; sourceTree = "<group>"; };
 		AE6D955E7E1B8A9153AFC423 /* Pods-GettyImageViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettyImageViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GettyImageViewer/Pods-GettyImageViewer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +165,9 @@
 			children = (
 				83DE092B207FA40D0061EB37 /* HomeViewController.swift */,
 				83E67F3C208052690066321C /* HomeViewModel.swift */,
+				83E67F3E208052B70066321C /* HomeImageCell.swift */,
+				83F1B5F2208081F400A8106C /* HomeImageCellItem.swift */,
+				83F1B5F42080826D00A8106C /* HomeImageObject.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -372,7 +381,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				83DE08FC207FA3940061EB37 /* AppDelegate.swift in Sources */,
+				83F1B5F3208081F400A8106C /* HomeImageCellItem.swift in Sources */,
+				83F1B5F52080826D00A8106C /* HomeImageObject.swift in Sources */,
 				83E67F3D208052690066321C /* HomeViewModel.swift in Sources */,
+				83E67F3F208052B70066321C /* HomeImageCell.swift in Sources */,
 				83DE092C207FA40D0061EB37 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
