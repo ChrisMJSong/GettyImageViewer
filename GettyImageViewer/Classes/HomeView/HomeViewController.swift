@@ -23,11 +23,28 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.title = NSLocalizedString("Album", comment: "Home View Title")
         
+        #if DEBUG
+            // test item for local test
+            homeViewModel.testSetup()
+        #endif
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier {
+        case "SegueDetail"?:
+            let viewController = segue.destination as! DetailViewController
+            if let item = sender as? HomeImageCellItem {
+                viewController.item = item
+            }
+        default:
+            break
+        }
     }
 }
 
