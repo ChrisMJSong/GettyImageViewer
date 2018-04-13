@@ -10,4 +10,11 @@ import UIKit
 
 class HomeImageCell: UICollectionViewCell {
 
+    @IBOutlet weak var imageView: UIImageView!
+    var item: HomeImageCellItem?
+    
+    func updateItem(item: HomeImageCellItem) {
+        self.item = item
+        self.imageView.image = item.imageObject.loadImage()
+    }
 }
