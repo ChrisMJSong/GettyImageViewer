@@ -79,13 +79,44 @@
         <!--Detail View Controller-->
         <scene sceneID="vDF-30-IO9">
             <objects>
-                <viewController id="cUe-1U-Q09" customClass="DetailViewController" customModule="GettyImageViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="cUe-1U-Q09" customClass="DetailViewController" customModule="GettyImageViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F8T-Pa-84x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="BVw-o6-MIf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f60-Ib-13L">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="f60-Ib-13L" firstAttribute="centerY" secondItem="BVw-o6-MIf" secondAttribute="centerY" id="0F3-XM-KK0"/>
+                                    <constraint firstAttribute="bottom" secondItem="f60-Ib-13L" secondAttribute="bottom" id="76F-lD-g6G"/>
+                                    <constraint firstItem="f60-Ib-13L" firstAttribute="top" secondItem="BVw-o6-MIf" secondAttribute="top" id="N6E-lI-uD4"/>
+                                    <constraint firstItem="f60-Ib-13L" firstAttribute="centerX" secondItem="BVw-o6-MIf" secondAttribute="centerX" id="XHn-Gz-JmS"/>
+                                    <constraint firstAttribute="trailing" secondItem="f60-Ib-13L" secondAttribute="trailing" id="gHz-ui-roa"/>
+                                    <constraint firstItem="f60-Ib-13L" firstAttribute="leading" secondItem="BVw-o6-MIf" secondAttribute="leading" id="yZ9-dO-1BO"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="cUe-1U-Q09" id="41H-t9-cpN"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BVw-o6-MIf" firstAttribute="top" secondItem="F8T-Pa-84x" secondAttribute="top" id="1vN-cn-jav"/>
+                            <constraint firstAttribute="trailing" secondItem="BVw-o6-MIf" secondAttribute="trailing" id="NOR-Hf-FRM"/>
+                            <constraint firstItem="BVw-o6-MIf" firstAttribute="leading" secondItem="F8T-Pa-84x" secondAttribute="leading" id="V6U-pC-CXc"/>
+                            <constraint firstItem="BVw-o6-MIf" firstAttribute="bottom" secondItem="lyG-gz-I1l" secondAttribute="bottom" id="qqc-fL-IJM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lyG-gz-I1l"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="f60-Ib-13L" id="OGx-UM-FL5"/>
+                        <outlet property="scrollView" destination="BVw-o6-MIf" id="4wm-Tk-UlH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBW-pl-iDn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

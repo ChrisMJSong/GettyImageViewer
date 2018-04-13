@@ -10,10 +10,18 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var item: HomeImageCellItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = item?.subject
+        
+        self.imageView.image = item?.imageObject.loadImage()
     }
 
     override func didReceiveMemoryWarning() {
