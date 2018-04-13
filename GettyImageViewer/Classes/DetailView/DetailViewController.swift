@@ -22,9 +22,9 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = item?.subject
-        
-        self.imageView.image = item?.imageObject.loadImage()
+        if let item = item {
+            self.loadItem(item)
+        }
         
         // set tap gesture for hide navigation
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(toggleNavigationBar(_ :)))
@@ -34,6 +34,15 @@ class DetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    /// Load cell item
+    ///
+    /// - Parameter item: item instance
+    func loadItem(_ item: HomeImageCellItem) {
+        self.item = item
+        self.title = item.subject
+        self.imageView.image = item.imageObject.loadImage()
     }
     
     /// Hide navigation bar and toolbar when tapped
