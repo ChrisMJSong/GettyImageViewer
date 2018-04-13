@@ -10,4 +10,8 @@ import UIKit
 
 class HomeImageCellItem: NSObject {
 
+    var subject: String?
+    var detailDescription: String?
+    var imageObject = HomeImageObject()
+    
 }
