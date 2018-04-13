@@ -69,11 +69,27 @@
                     <navigationItem key="navigationItem" id="Psx-43-Zol"/>
                     <connections>
                         <outlet property="collectionView" destination="5ze-pg-90A" id="lzu-LS-Rvw"/>
+                        <segue destination="cUe-1U-Q09" kind="show" identifier="SegueDetail" id="nZw-mW-IGF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="358.4707646176912"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="vDF-30-IO9">
+            <objects>
+                <viewController id="cUe-1U-Q09" customClass="DetailViewController" customModule="GettyImageViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F8T-Pa-84x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="lyG-gz-I1l"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rBW-pl-iDn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031" y="358"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KkJ-7M-TI7">
@@ -89,7 +105,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ufe-WF-28s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-834" y="118"/>
+            <point key="canvasLocation" x="-826" y="358"/>
         </scene>
     </scenes>
 </document>
