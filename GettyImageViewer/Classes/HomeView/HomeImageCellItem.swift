@@ -10,8 +10,20 @@ import UIKit
 
 class HomeImageCellItem: NSObject {
 
+    var preItem: HomeImageCellItem?
+    var nextItem: HomeImageCellItem?
+    
     var subject: String?
     var detailDescription: String?
     var imageObject = HomeImageObject()
     
+    deinit {
+        // will link with two item when item was deallocated
+        if let preItem = preItem, let nextItem = nextItem {
+            preItem.nextItem = nextItem
+            nextItem.preItem = preItem
+        }
+        preItem     = nil
+        nextItem    = nil
+    }
 }
