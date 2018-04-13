@@ -11,11 +11,20 @@ import UIKit
 class DetailViewController: UIViewController {
     
     fileprivate let animateTime = 0.25
+    fileprivate enum PanGestureDirection: Int {
+        case none = -1,
+        up = 0,
+        down,
+        left,
+        right
+    }
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var toolBar: UIToolbar!
     
+    private var panningDirection = PanGestureDirection.none
+    var panningStartPoint = CGPoint.zero
     var item: HomeImageCellItem?
     
     override func viewDidLoad() {
@@ -29,6 +38,10 @@ class DetailViewController: UIViewController {
         // set tap gesture for hide navigation
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(toggleNavigationBar(_ :)))
         self.scrollView.addGestureRecognizer(tapGesture)
+        
+        // set pan gesture for action
+        let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(panScreen(_ :)))
+        self.scrollView.addGestureRecognizer(panGesture)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +75,70 @@ class DetailViewController: UIViewController {
         
         // change background color
         self.scrollView.backgroundColor = isHidden ? UIColor.white : UIColor.black
+    }
+    
+    /// Check screen panning and do action by direction
+    /// Horizontal: change image
+    /// Vertical: close detail viewer
+    ///
+    /// - Parameter panGesture: PanGesture instance
+    @objc func panScreen(_ panGesture: UIPanGestureRecognizer) {
+        switch panGesture.state {
+        case .began:
+            if panningDirection == .none {
+                // direction calculation
+                let velocity = panGesture.velocity(in: panGesture.view)
+                let isHorizontal = fabs(velocity.x) > fabs(velocity.y)
+                if isHorizontal {
+                    // horizontal
+                    panningDirection = velocity.x > 0 ? .right : .left
+                }else{
+                    // vertical
+                    panningDirection = velocity.y > 0 ? .down : .up
+                }
+                panningStartPoint = panGesture.location(in: panGesture.view)
+            }
+            break
+            
+        case .changed:
+            switch panningDirection {
+            case .up, .down:
+                // vertical
+                self.navigationController?.popViewController(animated: true)
+                // FIXME: TEST - change direction state when image changed
+                panningDirection = .none
+                break
+                
+                // Horizontal
+            case .left:
+                if let nextItem = item?.nextItem {
+                    loadItem(nextItem)
+                    // FIXME: TEST - change direction state when image changed
+                    panningDirection = .none
+                }
+                break
+                
+            case .right:
+                if let preItem = item?.preItem {
+                    loadItem(preItem)
+                    // FIXME: TEST - change direction state when image changed
+                    panningDirection = .none
+                }
+                break
+                
+            case .none:
+                break
+            }
+            break
+            
+        case .ended, .failed, .cancelled:
+            panningDirection = .none
+            panningStartPoint = .zero
+            break
+            
+        default:
+            break
+        }
     }
 
     /// Hide statusbar when full screen imaging
