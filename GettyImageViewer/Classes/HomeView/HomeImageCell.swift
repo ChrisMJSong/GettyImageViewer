@@ -15,6 +15,6 @@ class HomeImageCell: UICollectionViewCell {
     
     func updateItem(item: HomeImageCellItem) {
         self.item = item
-        self.imageView.image = item.imageObject.loadImage()
+        self.imageView.image = item.imageObject.loadThumbnailImage()
     }
 }

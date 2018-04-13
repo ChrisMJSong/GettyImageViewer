@@ -13,6 +13,14 @@ class HomeImageObject: NSObject {
     var urlString: String?
     var cache: NSCache = NSCache<NSString, UIImage>()
     
+    func loadThumbnailImage() -> UIImage {
+        // 1. check cache
+        // 2. check local
+        // 3. web download
+        
+        return #imageLiteral(resourceName: "ImageSample.jpg")
+    }
+    
     func loadImage() -> UIImage {
         // 1. check cache
         // 2. check local
