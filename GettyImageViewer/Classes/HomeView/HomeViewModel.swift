@@ -71,8 +71,10 @@ class HomeViewModel: NSObject {
             
         default:
             let selectedItem = items[index]
+            let preSelectedItem = items[index - 1]
             selectedItem.preItem = item
             item.nextItem = selectedItem
+            item.preItem = preSelectedItem
             break
         }
         
