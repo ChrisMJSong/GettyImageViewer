@@ -103,19 +103,34 @@
                                     <outlet property="delegate" destination="cUe-1U-Q09" id="41H-t9-cpN"/>
                                 </connections>
                             </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfl-Mv-sBl">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="jIa-2x-Aek"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Inn-Jv-J60"/>
+                                    <barButtonItem systemItem="trash" id="G50-mn-WWV"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="cUe-1U-Q09" id="O0u-Uq-J8B"/>
+                                </connections>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BVw-o6-MIf" firstAttribute="top" secondItem="F8T-Pa-84x" secondAttribute="top" id="1vN-cn-jav"/>
                             <constraint firstAttribute="trailing" secondItem="BVw-o6-MIf" secondAttribute="trailing" id="NOR-Hf-FRM"/>
+                            <constraint firstItem="vfl-Mv-sBl" firstAttribute="trailing" secondItem="lyG-gz-I1l" secondAttribute="trailing" id="RYI-Vo-cAr"/>
                             <constraint firstItem="BVw-o6-MIf" firstAttribute="leading" secondItem="F8T-Pa-84x" secondAttribute="leading" id="V6U-pC-CXc"/>
+                            <constraint firstItem="vfl-Mv-sBl" firstAttribute="leading" secondItem="lyG-gz-I1l" secondAttribute="leading" id="W8P-bk-0xo"/>
                             <constraint firstItem="BVw-o6-MIf" firstAttribute="bottom" secondItem="lyG-gz-I1l" secondAttribute="bottom" id="qqc-fL-IJM"/>
+                            <constraint firstItem="lyG-gz-I1l" firstAttribute="bottom" secondItem="vfl-Mv-sBl" secondAttribute="bottom" id="xcq-mz-IAX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lyG-gz-I1l"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="f60-Ib-13L" id="OGx-UM-FL5"/>
                         <outlet property="scrollView" destination="BVw-o6-MIf" id="4wm-Tk-UlH"/>
+                        <outlet property="toolBar" destination="vfl-Mv-sBl" id="Y02-pF-xaj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBW-pl-iDn" userLabel="First Responder" sceneMemberID="firstResponder"/>
