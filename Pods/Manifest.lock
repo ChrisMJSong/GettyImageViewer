@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.7.1)
   - HTMLReader (2.1.1)
   - HTMLString (4.0.1)
+  - ReachabilitySwift (4.1.0)
   - RxAlamofire (4.2.0):
     - RxAlamofire/Core (= 4.2.0)
   - RxAlamofire/Core (4.2.0):
@@ -15,6 +16,7 @@ PODS:
 DEPENDENCIES:
   - HTMLReader (~> 2.1)
   - HTMLString (~> 4.0)
+  - ReachabilitySwift (~> 4.1)
   - RxAlamofire (~> 4.2)
   - RxCocoa (~> 4.1)
   - RxSwift (~> 4.1)
@@ -25,6 +27,7 @@ SPEC REPOS:
     - Alamofire
     - HTMLReader
     - HTMLString
+    - ReachabilitySwift
     - RxAlamofire
     - RxCocoa
     - RxSwift
@@ -34,11 +37,12 @@ SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
   HTMLReader: 311dd8a7f6a15dd815977f8e963dff4588a1ba05
   HTMLString: 8d9a8a8aaf63dd52c5b8cd9a38e14da52f753210
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   RxAlamofire: 87a9c588541210cc3e4a1f843ccc3ecf3eb98b31
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 2e780e18b2ed84131402046db79d586e4a4ed63a
+PODFILE CHECKSUM: adee63214066417e6af0f825994fe34a6542bd27
 
 COCOAPODS: 1.5.0

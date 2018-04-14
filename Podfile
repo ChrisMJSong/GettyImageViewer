@@ -14,6 +14,7 @@ def shared_pods
   pod 'HTMLReader', '~> 2.1'
   pod 'HTMLString', '~> 4.0'
   pod 'SVProgressHUD', '~> 2.2'
+  pod 'ReachabilitySwift', '~> 4.1'
 end
 
 target 'GettyImageViewer' do
