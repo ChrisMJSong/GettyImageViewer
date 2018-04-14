@@ -22,8 +22,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = NSLocalizedString("Album", comment: "Home View Title")
-        
+        setup()
+        // load initial page
+        reloadView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,6 +32,20 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /// set up
+    func setup(){
+//        self.title = NSLocalizedString("Getty Image Gallary", comment: "Home View Title")
+        // remove firstview
+        self.navigationItem.hidesBackButton = true
+        self.navigationController?.viewControllers.remove(at: 0)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        let image = UIImage.init(named: "logo_t")
+        let imageView = UIImageView.init(image: image)
+        self.navigationItem.titleView = imageView
+        
+        SVProgressHUD.setForegroundColor(themeColor)
+    }
     
     /// reload data from getty server
     func reloadView(){

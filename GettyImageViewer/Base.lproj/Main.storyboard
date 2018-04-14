@@ -21,7 +21,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5ze-pg-90A">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="nC1-Ls-mjC">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="1" id="nC1-Ls-mjC">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="50" height="50"/>
@@ -108,7 +108,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="BVw-o6-MIf">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="BVw-o6-MIf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f60-Ib-13L">
@@ -132,7 +132,17 @@
                                 <items>
                                     <barButtonItem systemItem="action" id="jIa-2x-Aek"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Inn-Jv-J60"/>
-                                    <barButtonItem systemItem="trash" id="G50-mn-WWV"/>
+                                    <barButtonItem systemItem="save" id="G50-mn-WWV">
+                                        <connections>
+                                            <action selector="saveImage:" destination="cUe-1U-Q09" id="8hL-jK-l8T"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Sb1-Zo-DKJ"/>
+                                    <barButtonItem title="Info" id="yaT-6Z-IYF">
+                                        <connections>
+                                            <action selector="showInfo:" destination="cUe-1U-Q09" id="Zy1-yT-fUU"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <connections>
                                     <outlet property="delegate" destination="cUe-1U-Q09" id="O0u-Uq-J8B"/>
@@ -170,12 +180,52 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5rL-4r-N51"/>
+                        <segue destination="T6T-1c-Teg" kind="relationship" relationship="rootViewController" id="PXx-sK-sN2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ufe-WF-28s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-826" y="358"/>
+            <point key="canvasLocation" x="-1764" y="358"/>
+        </scene>
+        <!--Intro View Controller-->
+        <scene sceneID="7Cv-v9-apa">
+            <objects>
+                <viewController id="T6T-1c-Teg" customClass="IntroViewController" customModule="GettyImageViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZLl-TJ-KFU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="vnT-Rp-jfi">
+                                <rect key="frame" x="18.5" y="305" width="337" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="GFg-GA-6aU"/>
+                                    <constraint firstAttribute="width" constant="337" id="Vpx-y6-azm"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vnT-Rp-jfi" firstAttribute="top" secondItem="ZLl-TJ-KFU" secondAttribute="top" priority="750" constant="305" id="Fm0-4l-I9U"/>
+                            <constraint firstItem="vnT-Rp-jfi" firstAttribute="centerY" secondItem="ZLl-TJ-KFU" secondAttribute="centerY" id="fLW-eQ-ez4"/>
+                            <constraint firstItem="vnT-Rp-jfi" firstAttribute="centerX" secondItem="ZLl-TJ-KFU" secondAttribute="centerX" id="wHW-G3-A4I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qq7-GG-Bb1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="itp-PK-C46"/>
+                    <connections>
+                        <outlet property="constantLogoViewHeight" destination="GFg-GA-6aU" id="4gH-WJ-baR"/>
+                        <outlet property="constantLogoViewTop" destination="Fm0-4l-I9U" id="YZ7-1k-lMm"/>
+                        <outlet property="constantLogoViewVertical" destination="fLW-eQ-ez4" id="cnq-n1-XAl"/>
+                        <outlet property="constantLogoViewWidth" destination="Vpx-y6-azm" id="tMR-7J-SBT"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="SegueHome" animates="NO" id="Cx8-Cw-gmZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aiD-Kq-0JO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-823" y="358"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="337" height="57"/>
+    </resources>
 </document>
