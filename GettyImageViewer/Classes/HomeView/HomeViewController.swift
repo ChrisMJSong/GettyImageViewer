@@ -15,7 +15,6 @@ class HomeViewController: UIViewController {
 
     let themeColor = UIColor(red:0.00, green:0.43, blue:0.99, alpha:1.00)
     fileprivate let cellIdentifier = "ImageCell"
-    fileprivate let itemPerRow = isIphone() ? 4 : 5
     
     let homeViewModel = HomeViewModel()
     var disposedBag = DisposeBag()
@@ -127,12 +126,39 @@ class HomeViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    class func isIphone() -> Bool {
-        return UIDevice.current.userInterfaceIdiom == .phone
+    class func itemPerRow() -> CGFloat {
+        var itemPerRow: CGFloat = 7
+        switch UIDevice.current.orientation {
+        case .portrait, .portraitUpsideDown:
+            switch UIDevice.current.userInterfaceIdiom {
+            case .phone:
+                itemPerRow = 4
+            case .pad, .carPlay:
+                itemPerRow = 5
+            default:
+                break
+            }
+            
+        default:
+            break
+        }
+        
+        return itemPerRow
     }
     
     @IBAction func reloadAlbum(_ sender: Any) {
         self.reloadView()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        
+        layout.invalidateLayout()
+        
     }
 }
 
@@ -177,8 +203,8 @@ extension HomeViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellPadding: CGFloat = CGFloat(itemPerRow * 2 - 2);
-        let itemWidth = (collectionView.frame.size.width - cellPadding) / CGFloat(itemPerRow)
+        let cellPadding: CGFloat = CGFloat(HomeViewController.itemPerRow() * 2 - 2);
+        let itemWidth = (collectionView.frame.size.width - cellPadding) / CGFloat(HomeViewController.itemPerRow())
         
         return CGSize.init(width: itemWidth, height: itemWidth)
     }
