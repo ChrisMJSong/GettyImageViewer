@@ -86,9 +86,9 @@ class HomeViewModel: NSObject {
     /// - Parameter item: item instance
     func addItem(_ item: HomeImageCellItem) {
         if items.count > 0 {
-             let lastItem = items.last
-            item.preItem = lastItem
+            let lastItem = items.last
             lastItem?.nextItem = item
+            item.preItem = lastItem
         }
         items.append(item)
     }
