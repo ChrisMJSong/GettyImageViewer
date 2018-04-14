@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import RxSwift
+import Reachability
+import SVProgressHUD
 
 class HomeViewController: UIViewController {
 
+    let themeColor = UIColor(red:0.00, green:0.43, blue:0.99, alpha:1.00)
     fileprivate let cellIdentifier = "ImageCell"
-    fileprivate let itemPerRow = 3
-//    fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    fileprivate let itemPerRow = isIphone() ? 4 : 5
+    
     let homeViewModel = HomeViewModel()
+    var disposedBag = DisposeBag()
     
     @IBOutlet weak var barItemRefresh: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -30,6 +35,20 @@ class HomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier {
+        case "SegueDetail"?:
+            let viewController = segue.destination as! DetailViewController
+            if let item = sender as? HomeImageCellItem {
+                viewController.item = item
+            }
+            
+        default:
+            break
+        }
     }
     
     /// set up
@@ -49,6 +68,67 @@ class HomeViewController: UIViewController {
     
     /// reload data from getty server
     func reloadView(){
+        // check reachable
+        let reachability = Reachability()!
+        
+        // Network has no connection
+        if reachability.connection == .none
+        {
+            let message = NSLocalizedString("To access to the data, turn off airplane mode or use Wi-Fi.", comment: "Network no connection")
+            let actionSettings = UIAlertAction.init(title: NSLocalizedString("Settings", comment: "ButtonTitleSettings"), style: .cancel, handler: { (action) in
+                guard let url = URL.init(string: "App-prefs:root=WIFI") else {
+                    return
+                }
+                
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            })
+            let actionOK = UIAlertAction.init(title: NSLocalizedString("OK", comment: "ok"), style: .default, handler: nil)
+            self.showAlert(message, alertActions: actionSettings, actionOK)
+            return
+        }
+        
+        // download list
+        NetworkManager.shared.loadGettyMainPageSource { (result, error) in
+            
+            guard error == nil, let result = result else {
+                // show Error message
+                let message = (error?.localzedDescription())! + NSLocalizedString(" Please try again in a few minutes.", comment: "try again message")
+                self.showDefaultAlert(message)
+//                throw error
+                return
+            }
+            
+            let nodeNames = [".fullwidthbordertop", ".gallery-wrap", ".gallery-item-group"]
+            let element = HTMLParser.elementFromHTMLString(result)
+            let elements = HTMLParser.subElementsFromHTMLElement(element, nodeNames: nodeNames)
+            
+            if let elements = elements {
+                self.homeViewModel.replaceItemsByHTMLElements(elements)
+                self.collectionView.reloadData()
+            }
+            
+        }
+    }
+    
+    func showDefaultAlert(_ message: String) {
+        let actionOK = UIAlertAction.init(title: NSLocalizedString("OK", comment: "ok"), style: .default, handler: nil)
+        self.showAlert(message, alertActions: actionOK)
+    }
+    
+    func showAlert(_ message: String, alertActions: UIAlertAction...) {
+        let alert = UIAlertController.init(title: nil, message: message, preferredStyle: .alert)
+        for action in alertActions {
+            alert.addAction(action)
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    class func isIphone() -> Bool {
+        return UIDevice.current.userInterfaceIdiom == .phone
     }
     
     @IBAction func reloadAlbum(_ sender: Any) {
@@ -61,6 +141,15 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = homeViewModel.item(at: indexPath.row)
         performSegue(withIdentifier: "SegueDetail", sender: item)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ListFooter", for: indexPath)
+        let pLabel = view.subviews.last as! UILabel
+        pLabel.text = homeViewModel.footerMessage()
+        
+        return view
     }
 }
 
@@ -88,7 +177,7 @@ extension HomeViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellPadding: CGFloat = 2;
+        let cellPadding: CGFloat = CGFloat(itemPerRow * 2 - 2);
         let itemWidth = (collectionView.frame.size.width - cellPadding) / CGFloat(itemPerRow)
         
         return CGSize.init(width: itemWidth, height: itemWidth)

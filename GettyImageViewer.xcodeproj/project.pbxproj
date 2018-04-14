@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		83061F672081CCE20027DDAD /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83061F662081CCE20027DDAD /* HTMLParser.swift */; };
+		83061F6A2082A66A0027DDAD /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83061F692082A66A0027DDAD /* IntroViewController.swift */; };
 		83C350172080E04B00B013C7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C350162080E04B00B013C7 /* NetworkManager.swift */; };
 		83DE08FC207FA3940061EB37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE08FB207FA3940061EB37 /* AppDelegate.swift */; };
 		83DE0901207FA3940061EB37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DE08FF207FA3940061EB37 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		0A7AE34CFC51ECF619AA5D1E /* Pods_GettyImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GettyImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		350DC8DBAFBC7C8328F9E657 /* Pods-GettyImageViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettyImageViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-GettyImageViewer/Pods-GettyImageViewer.release.xcconfig"; sourceTree = "<group>"; };
 		83061F662081CCE20027DDAD /* HTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
+		83061F692082A66A0027DDAD /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		83C350162080E04B00B013C7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		83DE08F8207FA3940061EB37 /* GettyImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettyImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DE08FB207FA3940061EB37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 				350DC8DBAFBC7C8328F9E657 /* Pods-GettyImageViewer.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		83061F682082A6590027DDAD /* IntroView */ = {
+			isa = PBXGroup;
+			children = (
+				83061F692082A66A0027DDAD /* IntroViewController.swift */,
+			);
+			path = IntroView;
 			sourceTree = "<group>";
 		};
 		83C350152080E03C00B013C7 /* Common */ = {
@@ -170,6 +180,7 @@
 		83DE0929207FA3EE0061EB37 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				83061F682082A6590027DDAD /* IntroView */,
 				83C350152080E03C00B013C7 /* Common */,
 				83F1B5F620808FDB00A8106C /* DetailView */,
 				83DE092A207FA3F40061EB37 /* HomeView */,
@@ -416,6 +427,7 @@
 				83F1B5F3208081F400A8106C /* HomeImageCellItem.swift in Sources */,
 				83F1B5F52080826D00A8106C /* HomeImageObject.swift in Sources */,
 				83E67F3D208052690066321C /* HomeViewModel.swift in Sources */,
+				83061F6A2082A66A0027DDAD /* IntroViewController.swift in Sources */,
 				83C350172080E04B00B013C7 /* NetworkManager.swift in Sources */,
 				83E67F3F208052B70066321C /* HomeImageCell.swift in Sources */,
 				83DE092C207FA40D0061EB37 /* HomeViewController.swift in Sources */,
@@ -587,9 +599,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3MUZQ62XBP;
 				INFOPLIST_FILE = GettyImageViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chrismjsong.GettyImageViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.healcerion.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -602,9 +615,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3MUZQ62XBP;
 				INFOPLIST_FILE = GettyImageViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chrismjsong.GettyImageViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.healcerion.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

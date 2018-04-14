@@ -7,24 +7,26 @@
 //
 
 import UIKit
+import HTMLReader
+
 
 class HomeViewModel: NSObject {
-
+    
     private var items = Array<HomeImageCellItem>()
     
     /// add item for local test
     func testSetup(){
-        for i in 0..<7 {
-            let item = HomeImageCellItem()
-            item.subject = "test subject \(i)"
-            item.detailDescription = "nana im"
-            addItem(item)
-        }
-        
-        let item = HomeImageCellItem()
-        item.subject = "test subject ^"
-        item.detailDescription = "nana im"
-        insertItemAtIndex(item, at: 3)
+//        for i in 0..<16 {
+//            let item = HomeImageCellItem()
+//            item.subject = "test subject \(i)"
+//            item.textContent = "nana im"
+//            addItem(item)
+//        }
+//
+//        let item = HomeImageCellItem()
+//        item.subject = "test subject ^"
+//        item.textContent = "nana im"
+//        insertItemAtIndex(item, at: 3)
     }
     
     /// get item from items
@@ -33,6 +35,24 @@ class HomeViewModel: NSObject {
     /// - Returns: HomeImageCellItem instance
     func item(at index: Int) -> HomeImageCellItem {
         return items[index]
+    }
+    
+    func replaceItemsByHTMLElements(_ elements: Array<HTMLElement>) {
+        // remove all items
+        self.items.removeAll()
+        
+        for element in elements {
+            let detailAddress = element.childElementNodes[0].attributes["href"]
+            let thumbnameImageAddress = element.childElementNodes[0].childElementNodes[0].attributes["src"]
+            let subject = element.childElementNodes[1].child(at: 1).textContent
+            
+            let item = HomeImageCellItem.init()
+            item.subject = subject
+            item.imageObject.thumbImageUrlString = thumbnameImageAddress
+            item.contentUrlString = detailAddress
+            
+            addItem(item)
+        }
     }
     
     /// insert item in middle
@@ -125,5 +145,16 @@ class HomeViewModel: NSObject {
     /// - Returns: number of item
     func numberOfItemsInSection() -> Int {
         return items.count
+    }
+    
+    /// the string of number of items
+    ///
+    /// - Returns: a string that number of items
+    func footerMessage() -> String {
+        var result = NSLocalizedString("No items", comment: "footer message - no items")
+        if items.count > 0 {
+            result = NSLocalizedString("Total \(items.count) itmes.", comment: "footer message - item count")
+        }
+        return result
     }
 }
