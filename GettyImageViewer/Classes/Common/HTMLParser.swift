@@ -35,7 +35,11 @@ class HTMLParser: NSObject {
                 // if cant find element, return nil
                 return nil
             }
-            lastElement = lastElement?.document?.firstNode(matchingSelector: names[i])
+            if names[i] == ".firstNode" {
+                lastElement = lastElement?.document?.childElementNodes[0]
+            }else {
+                lastElement = lastElement?.document?.firstNode(matchingSelector: names[i])
+            }
         }
         let elements = lastElement?.nodes(matchingSelector: names[lastIndex])
         
