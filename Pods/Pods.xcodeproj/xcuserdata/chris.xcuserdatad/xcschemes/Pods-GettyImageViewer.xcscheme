@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B6371ECB6B9768DE24B17F37782713CE"
+               BlueprintIdentifier = "CA24DC9ED48A7786681B464EE1E6AD7E"
                BuildableName = "Pods_GettyImageViewer.framework"
                BlueprintName = "Pods-GettyImageViewer"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B6371ECB6B9768DE24B17F37782713CE"
+            BlueprintIdentifier = "CA24DC9ED48A7786681B464EE1E6AD7E"
             BuildableName = "Pods_GettyImageViewer.framework"
             BlueprintName = "Pods-GettyImageViewer"
             ReferencedContainer = "container:Pods.xcodeproj">

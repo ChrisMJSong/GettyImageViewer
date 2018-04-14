@@ -9,10 +9,10 @@ project 'GettyImageViewer.xcodeproj'
 def shared_pods
   # Pods for all schems
   pod 'RxSwift', '~> 4.1'
-  pod 'Alamofire', '~> 4.5'
+  pod 'RxCocoa', '~> 4.1'
+  pod 'RxAlamofire', '~> 4.2'
   pod 'HTMLReader', '~> 2.1'
   pod 'HTMLString', '~> 4.0'
-  pod 'SwiftyJSON', '~> 4.0'
   pod 'SVProgressHUD', '~> 2.2'
 end
 

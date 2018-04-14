@@ -2,35 +2,43 @@ PODS:
   - Alamofire (4.7.1)
   - HTMLReader (2.1.1)
   - HTMLString (4.0.1)
+  - RxAlamofire (4.2.0):
+    - RxAlamofire/Core (= 4.2.0)
+  - RxAlamofire/Core (4.2.0):
+    - Alamofire (~> 4.5)
+    - RxSwift (~> 4)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
   - SVProgressHUD (2.2.5)
-  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.5)
   - HTMLReader (~> 2.1)
   - HTMLString (~> 4.0)
+  - RxAlamofire (~> 4.2)
+  - RxCocoa (~> 4.1)
   - RxSwift (~> 4.1)
   - SVProgressHUD (~> 2.2)
-  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - HTMLReader
     - HTMLString
+    - RxAlamofire
+    - RxCocoa
     - RxSwift
     - SVProgressHUD
-    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
   HTMLReader: 311dd8a7f6a15dd815977f8e963dff4588a1ba05
   HTMLString: 8d9a8a8aaf63dd52c5b8cd9a38e14da52f753210
+  RxAlamofire: 87a9c588541210cc3e4a1f843ccc3ecf3eb98b31
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: f4aef75b85259acc6933db477b409ac5876e917d
+PODFILE CHECKSUM: 2e780e18b2ed84131402046db79d586e4a4ed63a
 
 COCOAPODS: 1.5.0
