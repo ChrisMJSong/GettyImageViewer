@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
 //    fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     let homeViewModel = HomeViewModel()
     
+    @IBOutlet weak var barItemRefresh: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -28,6 +29,15 @@ class HomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    /// reload data from getty server
+    func reloadView(){
+    }
+    
+    @IBAction func reloadAlbum(_ sender: Any) {
+        self.reloadView()
     }
 }
 
