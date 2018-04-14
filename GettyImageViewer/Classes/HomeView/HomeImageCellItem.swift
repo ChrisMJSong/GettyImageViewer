@@ -14,7 +14,8 @@ class HomeImageCellItem: NSObject {
     var nextItem: HomeImageCellItem?
     
     var subject: String?
-    var detailDescription: String?
+    var textContent: String?
+    var contentUrlString: String?
     var imageObject = HomeImageObject()
     
     deinit {
@@ -25,5 +26,9 @@ class HomeImageCellItem: NSObject {
         }
         preItem     = nil
         nextItem    = nil
+    }
+    
+    func hasDetailContent() -> Bool {
+        return imageObject.originImageUrlString != nil
     }
 }
