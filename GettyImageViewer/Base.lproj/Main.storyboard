@@ -221,6 +221,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jhw-5C-fkV" id="WhK-MB-uUx"/>
+                                    <outlet property="delegate" destination="jhw-5C-fkV" id="Qdz-nd-BMr"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -232,6 +236,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nix-dq-6pt"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="8IT-sl-hJD" id="DwS-ez-p5m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2BS-rR-LaK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

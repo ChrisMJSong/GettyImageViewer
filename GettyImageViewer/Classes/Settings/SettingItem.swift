@@ -9,5 +9,5 @@
 import UIKit
 
 class SettingItem: NSObject {
-
+    var subject: String?
 }
