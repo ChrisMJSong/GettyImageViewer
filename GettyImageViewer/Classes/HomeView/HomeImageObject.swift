@@ -233,7 +233,8 @@ class HomeImageObject: NSObject {
         }
         
         do {
-         try imageData.write(to: path.asURL())
+            let fileUrl = URL.init(fileURLWithPath: path)
+            try imageData.write(to: fileUrl)
         }catch{
             // write fail
             return false
