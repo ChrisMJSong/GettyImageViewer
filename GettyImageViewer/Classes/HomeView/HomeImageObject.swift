@@ -66,10 +66,6 @@ class HomeImageObject: NSObject {
             return image
         }
         
-        if let cell = imageView?.superview?.superview, cell is HomeImageCell {
-            // get indexpath
-        }
-        
         // before get image from web
         if type == .origin {
             // load thumb image
@@ -97,7 +93,14 @@ class HomeImageObject: NSObject {
             let key = NSString.init(string: type.string())
             self.cache.setObject(image!, forKey: key)
             
-            imageView?.image = image
+                if let superView = imageView?.superview?.superview as? HomeImageCell {
+                    if (superView.item?.imageObject == self) {
+                        imageView?.image = image
+                    }
+                }else {
+                    imageView?.image = image
+                }
+            
             
             // save image
             let result = self.setImageToLocal(type: type, imageData: data)
