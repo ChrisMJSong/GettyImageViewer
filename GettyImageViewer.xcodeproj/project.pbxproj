@@ -124,6 +124,14 @@
 			path = IntroView;
 			sourceTree = "<group>";
 		};
+		8362559B2083A8DA008ADA6F /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				83DE0907207FA3940061EB37 /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
 		8393D94E2083413700807357 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,11 +180,8 @@
 			children = (
 				83DE0929207FA3EE0061EB37 /* Classes */,
 				83E67F40208053C70066321C /* Resources */,
+				8362559B2083A8DA008ADA6F /* SupportFiles */,
 				83DE08FB207FA3940061EB37 /* AppDelegate.swift */,
-				83DE08FF207FA3940061EB37 /* Main.storyboard */,
-				83DE0902207FA3940061EB37 /* Assets.xcassets */,
-				83DE0904207FA3940061EB37 /* LaunchScreen.storyboard */,
-				83DE0907207FA3940061EB37 /* Info.plist */,
 			);
 			path = GettyImageViewer;
 			sourceTree = "<group>";
@@ -227,6 +232,9 @@
 			isa = PBXGroup;
 			children = (
 				83E67F41208053C70066321C /* Images */,
+				83DE08FF207FA3940061EB37 /* Main.storyboard */,
+				83DE0904207FA3940061EB37 /* LaunchScreen.storyboard */,
+				83DE0902207FA3940061EB37 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
