@@ -8,7 +8,7 @@
 
 import UIKit
 import HTMLReader
-import SVProgressHUD
+import KRProgressHUD
 
 class DetailViewController: UIViewController {
     
@@ -99,8 +99,7 @@ class DetailViewController: UIViewController {
             alert.addAction(actionOK)
             self.present(alert, animated: true, completion: nil)
         } else {
-            SVProgressHUD.showSuccess(withStatus: nil)
-            SVProgressHUD.dismiss(withDelay: 1.0)
+            KRProgressHUD.showSuccess()
         }
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KRProgressHUD
 
 class SettingViewModel: NSObject {
 
@@ -48,8 +49,10 @@ class SettingViewModel: NSObject {
                 try FileManager.default.removeItem(at: imagePath)
             }catch{
                 // delete fail
+                return
             }
             
+            KRProgressHUD.showSuccess()
             self.delegate?.tableView.reloadData()
         })
         alert.addAction(actionSetting)

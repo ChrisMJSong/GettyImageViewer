@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 import Reachability
-import SVProgressHUD
+import KRProgressHUD
 
 class HomeViewController: UIViewController {
 
@@ -63,7 +63,7 @@ class HomeViewController: UIViewController {
         let imageView = UIImageView.init(image: image)
         self.navigationItem.titleView = imageView
         
-        SVProgressHUD.setForegroundColor(themeColor)
+        KRProgressHUD.set(activityIndicatorViewStyle: .color(themeColor))
         
         refresherSetup()
     }

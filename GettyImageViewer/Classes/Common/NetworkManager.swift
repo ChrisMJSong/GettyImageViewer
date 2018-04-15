@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxAlamofire
 import HTMLReader
-import SVProgressHUD
+import KRProgressHUD
 
 public typealias CompletionHandler = (_ result: String?, _ error: NetworkError?) -> Void
 public typealias CompletionDataHandler = (_ result: Data?, _ error: NetworkError?) -> Void
@@ -42,18 +42,18 @@ class NetworkManager: NSObject {
     func stringFromWebPageSource(_ requestUrlString: String, _ completion: @escaping CompletionHandler){
         
         // show load indicator
-        SVProgressHUD.show()
+        KRProgressHUD.show()
         RxAlamofire.requestString(.get, requestUrlString)
             .subscribe(onNext: { (respons, resultString) in
                 completion(resultString, nil)
             }, onError: { (error) in
-                SVProgressHUD.dismiss()
+                KRProgressHUD.dismiss()
                 let objError = error as NSError
                 let nError = NetworkError.init(rawValue: objError.code)
                 completion(nil, nError)
             }, onCompleted: {
                 // hide load indicoatr
-                SVProgressHUD.dismiss()
+                KRProgressHUD.dismiss()
             }, onDisposed: nil)
             .disposed(by: disposeBag)
     }
