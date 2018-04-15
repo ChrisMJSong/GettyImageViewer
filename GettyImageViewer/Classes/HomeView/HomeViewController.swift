@@ -13,7 +13,7 @@ import KRProgressHUD
 
 class HomeViewController: UIViewController {
 
-    let themeColor = UIColor(red:0.00, green:0.43, blue:0.99, alpha:1.00)
+    let themeColor = UIColor.darkText
     fileprivate let cellIdentifier = "ImageCell"
     
     let homeViewModel = HomeViewModel()
@@ -58,6 +58,9 @@ class HomeViewController: UIViewController {
         self.navigationItem.hidesBackButton = true
         self.navigationController?.viewControllers.remove(at: 0)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationItem.leftBarButtonItem?.tintColor  = themeColor
+        self.navigationItem.rightBarButtonItem?.tintColor = themeColor
+        self.navigationItem.backBarButtonItem?.tintColor  = themeColor
         
         let image = UIImage.init(named: "logo_t")
         let imageView = UIImageView.init(image: image)
