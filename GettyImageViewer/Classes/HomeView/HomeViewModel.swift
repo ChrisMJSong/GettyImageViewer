@@ -138,7 +138,7 @@ class HomeViewModel: NSObject {
     func footerMessage() -> String {
         var result = NSLocalizedString("No items", comment: "footer message - no items")
         if items.count > 0 {
-            result = NSLocalizedString("Total \(items.count) itmes.", comment: "footer message - item count")
+            result = String.init(format: NSLocalizedString("Total %d items.", comment: "footer message - item count"), items.count)
         }
         return result
     }
