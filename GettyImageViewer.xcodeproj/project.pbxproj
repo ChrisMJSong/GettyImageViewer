@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		83061F672081CCE20027DDAD /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83061F662081CCE20027DDAD /* HTMLParser.swift */; };
 		83061F6A2082A66A0027DDAD /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83061F692082A66A0027DDAD /* IntroViewController.swift */; };
+		8393D9502083415100807357 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8393D94F2083415100807357 /* SettingViewController.swift */; };
 		83C350172080E04B00B013C7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C350162080E04B00B013C7 /* NetworkManager.swift */; };
 		83DE08FC207FA3940061EB37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE08FB207FA3940061EB37 /* AppDelegate.swift */; };
 		83DE0901207FA3940061EB37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DE08FF207FA3940061EB37 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		350DC8DBAFBC7C8328F9E657 /* Pods-GettyImageViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettyImageViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-GettyImageViewer/Pods-GettyImageViewer.release.xcconfig"; sourceTree = "<group>"; };
 		83061F662081CCE20027DDAD /* HTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
 		83061F692082A66A0027DDAD /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		8393D94F2083415100807357 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		83C350162080E04B00B013C7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		83DE08F8207FA3940061EB37 /* GettyImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettyImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DE08FB207FA3940061EB37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 				83061F692082A66A0027DDAD /* IntroViewController.swift */,
 			);
 			path = IntroView;
+			sourceTree = "<group>";
+		};
+		8393D94E2083413700807357 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8393D94F2083415100807357 /* SettingViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		83C350152080E03C00B013C7 /* Common */ = {
@@ -180,6 +190,7 @@
 		83DE0929207FA3EE0061EB37 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8393D94E2083413700807357 /* Settings */,
 				83061F682082A6590027DDAD /* IntroView */,
 				83C350152080E03C00B013C7 /* Common */,
 				83F1B5F620808FDB00A8106C /* DetailView */,
@@ -423,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83061F672081CCE20027DDAD /* HTMLParser.swift in Sources */,
+				8393D9502083415100807357 /* SettingViewController.swift in Sources */,
 				83DE08FC207FA3940061EB37 /* AppDelegate.swift in Sources */,
 				83F1B5F3208081F400A8106C /* HomeImageCellItem.swift in Sources */,
 				83F1B5F52080826D00A8106C /* HomeImageObject.swift in Sources */,
