@@ -131,24 +131,11 @@ class HomeImageObject: NSObject {
         self.cache.setObject(image, forKey: key)
     }
     
-    /// return a url that cache directory path
-    ///
-    /// - Returns: cache directory path
-    func cacheDirectoryPath() -> URL? {
-        let paths = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)
-        let cacheDirPath = paths.last
-        return cacheDirPath
-    }
-    
     /// return a url that image sub path by content type
     ///
     /// - Parameter type: content type
     /// - Returns: sub url path
     func imagePath(_ type: ImageContentType) -> URL? {
-        guard let cacheDirectory = cacheDirectoryPath() else {
-            return nil
-        }
-        
         var targetDriName = ""
         switch type {
         case .thumbnail:
@@ -157,9 +144,11 @@ class HomeImageObject: NSObject {
             targetDriName = HomeImageObject.originalDirectoryName
         }
         
-        let imagePath = cacheDirectory.appendingPathComponent("images").appendingPathComponent(targetDriName)
+        guard let imagePath = GTFileManager.cacheImagePath()?.appendingPathComponent(targetDriName) else {
+            return nil
+        }
         
-        if !FileManager.default.fileExists(atPath: imagePath.absoluteString) {
+        if !FileManager.default.fileExists(atPath: imagePath.path) {
             // if cant find create image directory
             do {
                 try FileManager.default.createDirectory(at: imagePath, withIntermediateDirectories: true, attributes: nil)
