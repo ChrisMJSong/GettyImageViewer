@@ -10,4 +10,12 @@ import UIKit
 
 class SettingItem: NSObject {
     var subject: String?
+    
+    /// check stored image size
+    ///
+    /// - Returns: image file size
+    func storedImagesStorage() -> String {
+        let imagePath = GTFileManager.cacheImagePath()
+        return GTFileManager.fileSizeString(at: (imagePath?.path)!, byteUnit: .useMB)
+    }
 }

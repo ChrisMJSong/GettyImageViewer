@@ -23,6 +23,7 @@ class SettingTableViewCell: UITableViewCell {
     /// - Parameter item: SettingItem
     func updateItem(_ item: SettingItem) {
         lbeSubject.text = item.subject
+        lbeStorage.text = item.storedImagesStorage()
     }
 
 }
