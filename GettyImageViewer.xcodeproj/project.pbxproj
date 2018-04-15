@@ -61,6 +61,8 @@
 		836255A02083AA88008ADA6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		836255A32083AA88008ADA6F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = Localizable.strings; sourceTree = "<group>"; };
 		836255A62083ABF9008ADA6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = ../Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		836255A72083AFB7008ADA6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
+		836255A92083AFBB008ADA6F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ko; path = ko.lproj/Info.plist; sourceTree = "<group>"; };
 		8393D94F2083415100807357 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8393D951208357E200807357 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		8393D953208357FE00807357 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -71,7 +73,6 @@
 		83DE0900207FA3940061EB37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83DE0902207FA3940061EB37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83DE0905207FA3940061EB37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		83DE0907207FA3940061EB37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83DE090C207FA3940061EB37 /* GettyImageViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GettyImageViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DE0910207FA3940061EB37 /* GettyImageViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettyImageViewerTests.swift; sourceTree = "<group>"; };
 		83DE0912207FA3940061EB37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,7 +137,7 @@
 			children = (
 				8362559E2083AA88008ADA6F /* en.lproj */,
 				836255A12083AA88008ADA6F /* ko.lproj */,
-				83DE0907207FA3940061EB37 /* Info.plist */,
+				836255A82083AFB7008ADA6F /* Info.plist */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -548,6 +549,15 @@
 				836255A32083AA88008ADA6F /* ko */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		836255A82083AFB7008ADA6F /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				836255A72083AFB7008ADA6F /* Base */,
+				836255A92083AFBB008ADA6F /* ko */,
+			);
+			name = Info.plist;
 			sourceTree = "<group>";
 		};
 		83DE08FF207FA3940061EB37 /* Main.storyboard */ = {

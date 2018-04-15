@@ -90,7 +90,7 @@
                                 <action selector="reloadAlbum:" destination="BYZ-38-t0r" id="g4k-jI-WJr"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="imgSettings" id="y9h-gS-pRZ">
+                        <barButtonItem key="rightBarButtonItem" image="imgSettings" id="y9h-gS-pRZ">
                             <connections>
                                 <segue destination="jhw-5C-fkV" kind="show" id="G4f-NA-vYG"/>
                             </connections>
@@ -197,16 +197,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sujbect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeM-VN-6kP">
-                                                    <rect key="frame" x="15" y="14" width="265" height="17"/>
+                                                    <rect key="frame" x="15" y="14" width="49.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,000 MB" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FS9-yP-xgH">
-                                                    <rect key="frame" x="290" y="13.5" width="70" height="16"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="Ide-6T-4Vc"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1,000 MB" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FS9-yP-xgH">
+                                                    <rect key="frame" x="74.5" y="13.5" width="285.5" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
