@@ -186,7 +186,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="8IT-sl-hJD">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingCell" id="Qjd-gD-OZ8" customClass="SettingTableViewCell" customModule="GettyImageViewer" customModuleProvider="target">
@@ -231,8 +231,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8IT-sl-hJD" firstAttribute="top" secondItem="USw-jY-B69" secondAttribute="top" id="30f-11-g3n"/>
                             <constraint firstAttribute="trailing" secondItem="8IT-sl-hJD" secondAttribute="trailing" id="3Bb-2M-Joq"/>
-                            <constraint firstItem="8IT-sl-hJD" firstAttribute="top" secondItem="nix-dq-6pt" secondAttribute="top" id="FML-6y-qQ1"/>
                             <constraint firstItem="8IT-sl-hJD" firstAttribute="bottom" secondItem="nix-dq-6pt" secondAttribute="bottom" id="KZo-mH-NqL"/>
                             <constraint firstItem="8IT-sl-hJD" firstAttribute="leading" secondItem="USw-jY-B69" secondAttribute="leading" id="mdY-Ci-ZbW"/>
                         </constraints>
@@ -244,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2BS-rR-LaK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="1131"/>
+            <point key="canvasLocation" x="1029.5999999999999" y="1130.2848575712144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KkJ-7M-TI7">

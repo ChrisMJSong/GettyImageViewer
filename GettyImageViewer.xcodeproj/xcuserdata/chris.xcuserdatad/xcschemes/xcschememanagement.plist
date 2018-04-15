@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
+		<key>GettyImageViewerUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>83DE08F7207FA3940061EB37</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>83DE090B207FA3940061EB37</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>83DE0916207FA3940061EB37</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
