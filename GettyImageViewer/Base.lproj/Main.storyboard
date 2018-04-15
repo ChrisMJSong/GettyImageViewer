@@ -202,19 +202,19 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,000 MB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FS9-yP-xgH">
-                                                    <rect key="frame" x="290" y="13" width="70" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,000 MB" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FS9-yP-xgH">
+                                                    <rect key="frame" x="290" y="13.5" width="70" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="Ide-6T-4Vc"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="FS9-yP-xgH" firstAttribute="leading" secondItem="oeM-VN-6kP" secondAttribute="trailing" constant="10" id="7Vc-MB-ePP"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="FS9-yP-xgH" secondAttribute="trailing" id="dQh-sN-zjd"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FS9-yP-xgH" secondAttribute="trailing" id="db1-Cc-Rt5"/>
                                                 <constraint firstItem="FS9-yP-xgH" firstAttribute="centerY" secondItem="rsk-b8-DKc" secondAttribute="centerY" id="e21-NS-iXP"/>
                                                 <constraint firstItem="oeM-VN-6kP" firstAttribute="leading" secondItem="rsk-b8-DKc" secondAttribute="leadingMargin" id="kMJ-bQ-x1l"/>
                                                 <constraint firstItem="oeM-VN-6kP" firstAttribute="centerY" secondItem="rsk-b8-DKc" secondAttribute="centerY" id="z72-kD-JdP"/>
