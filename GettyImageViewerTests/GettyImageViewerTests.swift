@@ -24,6 +24,36 @@ class GettyImageViewerTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let viewModel = HomeViewModel()
+        
+        for i in 0..<10 {
+            let item = HomeImageCellItem()
+            item.subject = "Item \(i)"
+            viewModel.addItem(item)
+        }
+        
+        // insert item to specific index
+        let specificIndex = [0, 3, 8]
+        for index in specificIndex {
+            let item = HomeImageCellItem()
+            item.subject = "Inserted item \(index)^"
+            viewModel.insertItemAtIndex(item, at: index)
+        }
+        
+        // delete item at index
+        viewModel.removeItem(at: 2)
+        let deletingItem = viewModel.item(at: 4)
+        print("deletingItem: ", deletingItem.subject!)
+        viewModel.removeItem(deletingItem)
+        
+        // show rest itmes
+        var nextItem: HomeImageCellItem? = viewModel.item(at: 0)
+        while nextItem != nil {
+            print("poped item: ", deletingItem.subject!)
+            nextItem = nextItem?.nextItem
+        }
+        print("complete")
     }
     
     func testPerformanceExample() {
