@@ -12,6 +12,7 @@ import KRProgressHUD
 class SettingViewModel: NSObject {
 
     private var items = Array<SettingItem>()
+    private var usedLibraries = Array<SettingItem>()
     var delegate: SettingViewController?
     
     /// Initial Setup
@@ -20,6 +21,25 @@ class SettingViewModel: NSObject {
         item.subject = NSLocalizedString("Delete all downlad image files", comment: "")
         item.action = { self.deleteAction() }
         addItem(item)
+        
+        // library - I have no time. so create other array. it will be refactoring
+        let names = ["CocoaPods", "RxSwift", "RxAlamofire", "fastlane", "HTMLReader", "HTMLString", "KRProgressHUD", "ReachabilitySwift"]
+        let licenses = ["MIT", "MIT", "MIT", "MIT", "Unknown", "MIT", "MIT", "MIT"]
+        let urls = ["https://cocoapods.org/", "https://github.com/ReactiveX/RxSwift", "https://github.com/RxSwiftCommunity/RxAlamofire", "https://fastlane.tools/", "https://github.com/nolanw/HTMLReader", "https://github.com/alexaubry/HTMLString", "https://github.com/krimpedance/KRProgressHUD", "https://github.com/ashleymills/Reachability.swift"]
+        for i in 0..<names.count {
+            let item = SettingItem()
+            item.subject = names[i]
+            item.detail  = licenses[i]
+            let urlString = urls[i]
+            item.action = {
+                let url = URL.init(string: urlString)!
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.openURL(url)}
+            }
+            
+            usedLibraries.append(item)
+        }
+        
     }
     
     /// Add item for table row
@@ -35,6 +55,14 @@ class SettingViewModel: NSObject {
     /// - Returns: SettingItem instance
     func item(at index: Int) -> SettingItem {
         return items[index]
+    }
+    
+    func item(at indexPath: IndexPath) -> SettingItem {
+        var array = items
+        if indexPath.section == 1 {
+            array = usedLibraries
+        }
+        return array[indexPath.row]
     }
     
     /// action for delete
@@ -64,15 +92,19 @@ class SettingViewModel: NSObject {
     /// return number of rows to tableview
     ///
     /// - Returns: item count
-    func numberOfRowsInSection() -> Int {
-        return items.count
+    func numberOfRowsInSection(_ section: Int) -> Int {
+        var array = items
+        if section == 1 {
+            array = usedLibraries
+        }
+        return array.count
     }
     
     /// return number of section to tableview
     ///
     /// - Returns: section count
     func numberOfSection() -> Int {
-        return 1
+        return 2
     }
     
     /// return title of the header of the specific section
@@ -80,6 +112,15 @@ class SettingViewModel: NSObject {
     /// - Parameter section: section index
     /// - Returns: section title
     func titleForHeaderInSection(_ section: Int) -> String {
-        return NSLocalizedString("Storage management", comment: "section title - storage")
+        var title = ""
+        switch section {
+        case 0:
+            title = NSLocalizedString("Storage management", comment: "section title - storage")
+        case 1:
+            title = NSLocalizedString("Libraries", comment: "section title - libraries")
+        default:
+            break
+        }
+        return title
     }
 }

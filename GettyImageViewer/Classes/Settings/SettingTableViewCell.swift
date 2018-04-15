@@ -24,6 +24,10 @@ class SettingTableViewCell: UITableViewCell {
     func updateItem(_ item: SettingItem) {
         lbeSubject.text = item.subject
         lbeStorage.text = item.storedImagesStorage()
+        if let detailText = item.detail {
+            lbeStorage.text = detailText
+            self.accessoryType = .disclosureIndicator
+        }
     }
 
 }

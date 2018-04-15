@@ -12,6 +12,7 @@ typealias ItemAction = () -> Void
 
 class SettingItem: NSObject {
     var subject: String?
+    var detail: String?
     var action: ItemAction?
     
     /// check stored image size

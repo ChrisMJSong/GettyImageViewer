@@ -33,7 +33,7 @@ class SettingViewController: UIViewController {
 extension SettingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRowsInSection()
+        return viewModel.numberOfRowsInSection(section)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,7 +42,7 @@ extension SettingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingViewController.reuseCellIdentifier) as! SettingTableViewCell
-        cell.updateItem(viewModel.item(at: indexPath.row))
+        cell.updateItem(viewModel.item(at: indexPath))
         return cell
     }
     
@@ -55,7 +55,7 @@ extension SettingViewController: UITableViewDataSource {
 extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let item = viewModel.item(at: indexPath.row)
+        let item = viewModel.item(at: indexPath)
         if let action = item.action {
             action()
         }
