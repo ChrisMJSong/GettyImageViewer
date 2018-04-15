@@ -14,21 +14,6 @@ class HomeViewModel: NSObject {
     
     private var items = Array<HomeImageCellItem>()
     
-    /// add item for local test
-    func testSetup(){
-//        for i in 0..<16 {
-//            let item = HomeImageCellItem()
-//            item.subject = "test subject \(i)"
-//            item.textContent = "nana im"
-//            addItem(item)
-//        }
-//
-//        let item = HomeImageCellItem()
-//        item.subject = "test subject ^"
-//        item.textContent = "nana im"
-//        insertItemAtIndex(item, at: 3)
-    }
-    
     /// get item from items
     ///
     /// - Parameter index: item index
