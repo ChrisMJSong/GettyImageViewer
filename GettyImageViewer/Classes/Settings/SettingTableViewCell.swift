@@ -10,6 +10,9 @@ import UIKit
 
 class SettingTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lbeSubject: UILabel!
+    @IBOutlet weak var lbeStorage: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +22,7 @@ class SettingTableViewCell: UITableViewCell {
     ///
     /// - Parameter item: SettingItem
     func updateItem(_ item: SettingItem) {
+        lbeSubject.text = item.subject
     }
 
 }

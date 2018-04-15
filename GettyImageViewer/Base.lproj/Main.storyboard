@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -195,14 +196,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeM-VN-6kP">
-                                                    <rect key="frame" x="15" y="14" width="270" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sujbect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeM-VN-6kP">
+                                                    <rect key="frame" x="15" y="14" width="265" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,000 MB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FS9-yP-xgH">
-                                                    <rect key="frame" x="295" y="13" width="70" height="17"/>
+                                                    <rect key="frame" x="290" y="13" width="70" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="Ide-6T-4Vc"/>
                                                     </constraints>
@@ -212,13 +213,17 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="oeM-VN-6kP" firstAttribute="leading" secondItem="rsk-b8-DKc" secondAttribute="leading" constant="15" id="4nA-xU-civ"/>
                                                 <constraint firstItem="FS9-yP-xgH" firstAttribute="leading" secondItem="oeM-VN-6kP" secondAttribute="trailing" constant="10" id="7Vc-MB-ePP"/>
-                                                <constraint firstAttribute="trailing" secondItem="FS9-yP-xgH" secondAttribute="trailing" constant="10" id="Oyi-za-SBM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FS9-yP-xgH" secondAttribute="trailing" id="dQh-sN-zjd"/>
                                                 <constraint firstItem="FS9-yP-xgH" firstAttribute="centerY" secondItem="rsk-b8-DKc" secondAttribute="centerY" id="e21-NS-iXP"/>
+                                                <constraint firstItem="oeM-VN-6kP" firstAttribute="leading" secondItem="rsk-b8-DKc" secondAttribute="leadingMargin" id="kMJ-bQ-x1l"/>
                                                 <constraint firstItem="oeM-VN-6kP" firstAttribute="centerY" secondItem="rsk-b8-DKc" secondAttribute="centerY" id="z72-kD-JdP"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lbeStorage" destination="FS9-yP-xgH" id="mGx-T1-hq0"/>
+                                            <outlet property="lbeSubject" destination="oeM-VN-6kP" id="LH6-Ym-gQo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
