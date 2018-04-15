@@ -10,6 +10,9 @@ import UIKit
 
 class SettingViewController: UIViewController {
 
+    static let reuseCellIdentifier = "SettingCell"
+    let viewModel = SettingViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,16 +23,27 @@ class SettingViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
+
+// MARK: UITableViewDataSource
+extension SettingViewController: UITableViewDataSource {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRowsInSection()
     }
-    */
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.numberOfSection()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: SettingViewController.reuseCellIdentifier) as! SettingTableViewCell
+        cell.updateItem(viewModel.items[indexPath.row])
+        return cell
+    }
+}
 
+// MARK: UITableViewDelegate
+extension SettingViewController: UITableViewDelegate {
+    
 }
