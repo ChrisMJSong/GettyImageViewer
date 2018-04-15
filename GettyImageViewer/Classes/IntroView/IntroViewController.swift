@@ -24,10 +24,10 @@ class IntroViewController: UIViewController {
         // move
         self.constantLogoViewWidth.constant  = 176
         self.constantLogoViewHeight.constant = 30
-        self.constantLogoViewTop.constant = 27
+        self.constantLogoViewTop.constant    = 27
         self.constantLogoViewVertical.isActive = false
         
-        UIView.animate(withDuration: 2.0, animations: {
+        UIView.animate(withDuration: 2.0, delay: 0, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
         }) { (isFinished) in
             if isFinished {
