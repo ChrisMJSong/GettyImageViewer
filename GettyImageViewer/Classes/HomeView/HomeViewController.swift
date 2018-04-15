@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     
     let homeViewModel = HomeViewModel()
     var disposedBag = DisposeBag()
+    var refresher = UIRefreshControl()
     
     @IBOutlet weak var barItemRefresh: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -63,10 +64,19 @@ class HomeViewController: UIViewController {
         self.navigationItem.titleView = imageView
         
         SVProgressHUD.setForegroundColor(themeColor)
+        
+        refresherSetup()
+    }
+    
+    func refresherSetup() {
+        // refresh
+        refresher.tintColor = themeColor
+        refresher.addTarget(self, action: #selector(reloadView), for: .valueChanged)
+        collectionView.addSubview(refresher)
     }
     
     /// reload data from getty server
-    func reloadView(){
+    @objc func reloadView(){
         // check reachable
         let reachability = Reachability()!
         
@@ -107,6 +117,7 @@ class HomeViewController: UIViewController {
             
             if let elements = elements {
                 self.homeViewModel.replaceItemsByHTMLElements(elements)
+                self.refresher.endRefreshing()
                 self.collectionView.reloadData()
             }
             
