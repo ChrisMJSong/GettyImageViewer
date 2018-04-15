@@ -209,7 +209,7 @@ class HomeImageObject: NSObject {
         
         let fullPath = imagePath?.appendingPathComponent(fileName2)
         
-        return fullPath?.absoluteString
+        return fullPath?.path
     }
     
     /// return a stored image from local
