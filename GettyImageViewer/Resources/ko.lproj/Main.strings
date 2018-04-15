@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "1,000 MB"; ObjectID = "FS9-yP-xgH"; */
+"FS9-yP-xgH.text" = "1,000 MB";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "HsH-fU-P6e"; */
+"HsH-fU-P6e.title" = " ";
+
+/* Class = "UIViewController"; title = "Settings"; ObjectID = "jhw-5C-fkV"; */
+"jhw-5C-fkV.title" = "설정";
+
+/* Class = "UILabel"; text = "Total 0 items"; ObjectID = "lV7-bC-AxQ"; */
+"lV7-bC-AxQ.text" = "0 장의 사진";
+
+/* Class = "UILabel"; text = "Sujbect"; ObjectID = "oeM-VN-6kP"; */
+"oeM-VN-6kP.text" = "제목";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "y9h-gS-pRZ"; */
+"y9h-gS-pRZ.title" = "항목";
+
+/* Class = "UIBarButtonItem"; title = "Info"; ObjectID = "yaT-6Z-IYF"; */
+"yaT-6Z-IYF.title" = "정보";
