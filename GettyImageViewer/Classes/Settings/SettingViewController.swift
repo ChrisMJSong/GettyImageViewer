@@ -19,22 +19,13 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setup()
+        viewModel.delegate = self
+        viewModel.setup()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func setup(){
-        // storege management
-        let item = SettingItem()
-        item.subject = NSLocalizedString("Delete all downlad image files", comment: "")
-        viewModel.addItem(item)
-        let item2 = SettingItem()
-        item2.subject = NSLocalizedString("Cache", comment: "")
-        viewModel.addItem(item2)
     }
 }
 
@@ -64,5 +55,9 @@ extension SettingViewController: UITableViewDataSource {
 extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let item = viewModel.item(at: indexPath.row)
+        if let action = item.action {
+            action()
+        }
     }
 }

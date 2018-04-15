@@ -11,6 +11,15 @@ import UIKit
 class SettingViewModel: NSObject {
 
     private var items = Array<SettingItem>()
+    var delegate: SettingViewController?
+    
+    /// Initial Setup
+    func setup(){
+        let item = SettingItem()
+        item.subject = NSLocalizedString("Delete all downlad image files", comment: "")
+        item.action = { self.deleteAction() }
+        addItem(item)
+    }
     
     /// Add item for table row
     ///
@@ -25,6 +34,28 @@ class SettingViewModel: NSObject {
     /// - Returns: SettingItem instance
     func item(at index: Int) -> SettingItem {
         return items[index]
+    }
+    
+    /// action for delete
+    func deleteAction() {
+        let message = NSLocalizedString("Delete the temporary image files.", comment: "delete alert subject")
+        let actionTitle = NSLocalizedString("Delete all", comment: "delete all button title")
+        let alert = UIAlertController.init(title: nil, message: message, preferredStyle: .actionSheet)
+        let actionSetting = UIAlertAction.init(title: actionTitle, style: .destructive, handler: { (action) in
+            // to delete
+            do{
+                let imagePath = GTFileManager.cacheImagePath()!
+                try FileManager.default.removeItem(at: imagePath)
+            }catch{
+                // delete fail
+            }
+            
+            self.delegate?.tableView.reloadData()
+        })
+        alert.addAction(actionSetting)
+        let actionOK = UIAlertAction.init(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: nil)
+        alert.addAction(actionOK)
+        delegate?.present(alert, animated: true, completion: nil)
     }
     
     /// return number of rows to tableview

@@ -8,14 +8,27 @@
 
 import UIKit
 
+typealias ItemAction = () -> Void
+
 class SettingItem: NSObject {
     var subject: String?
+    var action: ItemAction?
     
     /// check stored image size
     ///
     /// - Returns: image file size
     func storedImagesStorage() -> String {
         let imagePath = GTFileManager.cacheImagePath()
-        return GTFileManager.fileSizeString(at: (imagePath?.path)!, byteUnit: .useMB)
+        let path = (imagePath?.path)!
+        let fileSize = GTFileManager.fileSize(at: path)
+        var unit = ByteCountFormatter.Units.useBytes
+        if fileSize > 10^3 {
+            unit = .useKB
+        }else if fileSize > 10^6 {
+            unit = .useMB
+        }else if fileSize > 10^9 {
+            unit = .useGB
+        }
+        return GTFileManager.fileSizeString(at: (imagePath?.path)!, byteUnit: unit)
     }
 }
