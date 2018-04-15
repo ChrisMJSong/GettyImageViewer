@@ -13,7 +13,7 @@ def shared_pods
   pod 'RxAlamofire', '~> 4.2'
   pod 'HTMLReader', '~> 2.1'
   pod 'HTMLString', '~> 4.0'
-  pod 'SVProgressHUD', '~> 2.2'
+  pod 'KRProgressHUD', '~> 3.2'
   pod 'ReachabilitySwift', '~> 4.1'
 end
 
