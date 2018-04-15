@@ -69,7 +69,7 @@ class HomeImageObject: NSObject {
         // before get image from web
         if type == .origin {
             // load thumb image
-            imageView?.image = self.loadImage(.thumbnail, imageView: imageView)
+            imageView?.image = self.loadImage(.origin, imageView: imageView)
         }
         // try get image from web
         var targetUrlString: String?
@@ -93,15 +93,8 @@ class HomeImageObject: NSObject {
             let key = NSString.init(string: type.string())
             self.cache.setObject(image!, forKey: key)
             
-                if let superView = imageView?.superview?.superview as? HomeImageCell {
-                    if (superView.item?.imageObject == self) {
-                        imageView?.image = image
-                    }
-                }else {
-                    imageView?.image = image
-                }
-            
-            
+            imageView?.image = image
+                        
             // save image
             let result = self.setImageToLocal(type: type, imageData: data)
             if result == false {
@@ -118,6 +111,7 @@ class HomeImageObject: NSObject {
     /// - Returns: image instance
     func imageFromCache(_ type: ImageContentType) -> UIImage? {
         let key = NSString.init(string: type.string())
+        key.appending("Stored")
         return self.cache.object(forKey: key)
     }
     
@@ -128,6 +122,7 @@ class HomeImageObject: NSObject {
     ///   - type: image type
     func setImageToCache(image: UIImage, imageType type: ImageContentType) {
         let key = NSString.init(string: type.string())
+        key.appending("Stoerd")
         self.cache.setObject(image, forKey: key)
     }
     
@@ -159,7 +154,7 @@ class HomeImageObject: NSObject {
         
         let imagePath = cacheDirectory.appendingPathComponent("images").appendingPathComponent(targetDriName)
         
-        if !FileManager.default.fileExists(atPath: imagePath.absoluteString) {
+        if FileManager.default.fileExists(atPath: imagePath.absoluteString) {
             // if cant find create image directory
             do {
                 try FileManager.default.createDirectory(at: imagePath, withIntermediateDirectories: true, attributes: nil)
@@ -212,7 +207,7 @@ class HomeImageObject: NSObject {
         
         let fullPath = imagePath?.appendingPathComponent(fileName2)
         
-        return fullPath?.path
+        return fullPath?.absoluteString
     }
     
     /// return a stored image from local

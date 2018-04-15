@@ -128,8 +128,7 @@ class HomeViewController: UIViewController {
     
     class func itemPerRow() -> CGFloat {
         var itemPerRow: CGFloat = 7
-        
-        switch UIApplication.shared.statusBarOrientation {
+        switch UIDevice.current.orientation {
         case .portrait, .portraitUpsideDown:
             switch UIDevice.current.userInterfaceIdiom {
             case .phone:
